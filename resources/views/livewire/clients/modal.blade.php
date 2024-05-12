@@ -16,8 +16,8 @@
                     </div>
                     <div class="form-group">
                         <label class="main-content-label h6 font-weight-bold">{{ __('Phone') }}</label>
-                        <input class="form-control" type="text" name="phone_number" wire:model.live='form.phone_number' >
-                        @error('form.phone_number')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
+                        <input class="form-control" type="text" name="phone" wire:model.live='form.phone' >
+                        @error('form.phone')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
                     </div>
                     <div class="form-group">
                         <label class="main-content-label h6 font-weight-bold">{{ __('Email') }}</label>
@@ -31,56 +31,7 @@
                         @error('form.address')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
                     </div>
 
-                    <div class="form-group">
-                        <label class="main-content-label h6 font-weight-bold">{{ __('Area') }}</label>
-  
-                        <div class="input-group" >
-                            <select class="form-control h6 font-weight-bold" wire:model.live="form.area_id" >
-                                <option class="h6 font-weight-bold" label="{{ __('Choose Area') }}" ></option>
-                                @forelse ($areas as $value)
-                                    <option class="h6 font-weight-bold" value="{{ $value->id }}">{{ $value->name }}</option>
-                                @empty
 
-                                @endforelse
-
-                            </select>
-                        </div>
-                        @error('form.area_id')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label class="main-content-label h6 font-weight-bold">{{ __('Know US') }}</label>
-  
-                        <div class="input-group" >
-                            <select class="form-control h6 font-weight-bold" wire:model.live="form.social_id" >
-                                <option class="h6 font-weight-bold" label="{{ __('Choose Know US') }}" ></option>
-                                @forelse ($socials as $value)
-                                    <option class="h6 font-weight-bold" value="{{ $value->id }}">{{ $value->name }}</option>
-                                @empty
-
-                                @endforelse
-
-                            </select>
-                        </div>
-                        @error('form.social_id')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label class="main-content-label h6 font-weight-bold">{{ __('Category') }}</label>
-  
-                        <div class="input-group" >
-                            <select class="form-control h6 font-weight-bold" wire:model.live="form.category_id" >
-                                <option class="h6 font-weight-bold" label="{{ __('Choose Category') }}" ></option>
-                                @forelse ($categories as $value)
-                                    <option class="h6 font-weight-bold" value="{{ $value->id }}">{{ $value->name }}</option>
-                                @empty
-
-                                @endforelse
-
-                            </select>
-                        </div>
-                        @error('form.category_id')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
-                    </div>
                     <div class="form-group">
                         <label class="main-content-label h6 font-weight-bold">{{ __('Date') }}</label>
                         <input class="form-control" type="datetime-local" name="date" wire:model.live='form.date' >
@@ -91,22 +42,7 @@
                         <input class="form-control" type="text" name="notes" wire:model.live='form.notes' >
                         @error('form.notes')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
                     </div>
-                    <div class="form-group">
-                        <label class="main-content-label h6 font-weight-bold">{{ __('Status') }}</label>
-  
-                        <div class="input-group" >
-                            <select class="form-control h6 font-weight-bold" wire:model.live="form.status_id" >
-                                <option class="h6 font-weight-bold" label="{{ __('Choose Status') }}" ></option>
-                                @forelse ($statuses as $value)
-                                    <option class="h6 font-weight-bold" value="{{ $value->id }}">{{ $value->name }}</option>
-                                @empty
 
-                                @endforelse
-
-                            </select>
-                        </div>
-                        @error('form.status_id')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
-                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -136,8 +72,8 @@
                     </div>
                     <div class="form-group">
                         <label class="main-content-label h6 font-weight-bold">{{ __('Phone') }}</label>
-                        <input class="form-control" type="text" name="phone_number" wire:model.live='form.phone_number' >
-                        @error('form.phone_number')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
+                        <input class="form-control" type="text" name="phone" wire:model.live='form.phone' >
+                        @error('form.phone')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
                     </div>
                     <div class="form-group">
                         <label class="main-content-label h6 font-weight-bold">{{ __('Email') }}</label>
@@ -152,56 +88,6 @@
                     </div>
 
                     <div class="form-group">
-                        <label class="main-content-label h6 font-weight-bold">{{ __('Area') }}</label>
-  
-                        <div class="input-group" >
-                            <select class="form-control h6 font-weight-bold" wire:model.live="form.area_id" >
-                                <option class="h6 font-weight-bold" label="{{ __('Choose Area') }}" ></option>
-                                @forelse ($areas as $value)
-                                    <option class="h6 font-weight-bold" value="{{ $value->id }}">{{ $value->name }}</option>
-                                @empty
-
-                                @endforelse
-
-                            </select>
-                        </div>
-                        @error('form.area_id')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label class="main-content-label h6 font-weight-bold">{{ __('Know US') }}</label>
-  
-                        <div class="input-group" >
-                            <select class="form-control h6 font-weight-bold" wire:model.live="form.social_id" >
-                                <option class="h6 font-weight-bold" label="{{ __('Choose Know US') }}" ></option>
-                                @forelse ($socials as $value)
-                                    <option class="h6 font-weight-bold" value="{{ $value->id }}">{{ $value->name }}</option>
-                                @empty
-
-                                @endforelse
-
-                            </select>
-                        </div>
-                        @error('form.social_id')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label class="main-content-label h6 font-weight-bold">{{ __('Category') }}</label>
-  
-                        <div class="input-group" >
-                            <select class="form-control h6 font-weight-bold" wire:model.live="form.category_id" >
-                                <option class="h6 font-weight-bold" label="{{ __('Choose Category') }}" ></option>
-                                @forelse ($categories as $value)
-                                    <option class="h6 font-weight-bold" value="{{ $value->id }}">{{ $value->name }}</option>
-                                @empty
-
-                                @endforelse
-
-                            </select>
-                        </div>
-                        @error('form.category_id')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
-                    </div>
-                    <div class="form-group">
                         <label class="main-content-label h6 font-weight-bold">{{ __('Date') }}</label>
                         <input class="form-control" type="datetime-local" name="date" wire:model.live='form.date' >
                         @error('form.date')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
@@ -211,22 +97,7 @@
                         <input class="form-control" type="text" name="notes" wire:model.live='form.notes' >
                         @error('form.notes')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
                     </div>
-                    <div class="form-group">
-                        <label class="main-content-label h6 font-weight-bold">{{ __('Status') }}</label>
-  
-                        <div class="input-group" >
-                            <select class="form-control h6 font-weight-bold" wire:model.live="form.status_id" >
-                                <option class="h6 font-weight-bold" label="{{ __('Choose Status') }}" ></option>
-                                @forelse ($statuses as $value)
-                                    <option class="h6 font-weight-bold" value="{{ $value->id }}">{{ $value->name }}</option>
-                                @empty
 
-                                @endforelse
-
-                            </select>
-                        </div>
-                        @error('form.status_id')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
-                    </div>
                 </form>
             </div>
             <div class="modal-footer">
@@ -279,7 +150,6 @@
 						<div class="card user-wideget user-wideget-widget widget-user">
 							<div class="widget-user-header bg-primary">
 								<h3 class="widget-user-username">{{ $form->name }}</h3>
-								<h5 class="widget-user-desc">{{ $form->category_name }}</h5>
 							</div>
 							<div class="widget-user-image">
 								<img src="{{URL::asset('assets/img/faces/17.jpg')}}" class="brround" alt="User Avatar">
@@ -317,7 +187,7 @@
 										<div class="media">
 											<div class="media-body">
 												<div>
-													<label>Phone</label> <span class="tx-medium">{{ $form->phone_number }}</span>
+													<label>Phone</label> <span class="tx-medium">{{ $form->phone }}</span>
 												</div>
 												<div>
 													<label>Email</label> <span class="tx-medium">{{ $form->email }}</span>
@@ -331,17 +201,7 @@
 												</div>
 											</div>
 										</div>
-										<div class="media">
-											<div class="media-body">
-												<div>
-													<label>Area</label> <span class="tx-medium">{{ $form->area_name }}</span>
-												</div>
-												<div>
-													<label>Know US</label> <span class="tx-medium">{{ $form->social_name }}</span>
-												</div>
-											</div>
-										</div>
-
+										
 										<div class="media mb-0">
 											<div class="media-body">
 												<div>
@@ -409,115 +269,3 @@
 <!-- End Show modal -->
 
 
-<!-- show Phones Modal -->
-<div wire:ignore.self class="modal fade" id="showPhonesModal" >
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content modal-content-demo">
-            <div class="modal-header">
-                <h6 class="modal-title">{{ __('Show Phones') }} [ {{ $form->name }} ]</h6>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button" wire:click="close()" wire:click="$set('isModalOpen', false)"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <div class="table-responsive">
-                    <table class="table table-bordered mg-b-0 text-md-nowrap">
-                        <thead>
-                            <tr>
-                                <th>{{ __('#') }}</th>
-                                <th>{{ __('Phone') }}</th>
-                                <th>{{ __('Category') }}</th>
-                                <th>{{ __('Control') }}</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                                @php
-                                    $i=1
-                                @endphp
-                                @forelse ($form->phones as $phone)
-                                    <tr>
-                                        <th class="bg-gray-100" scope="row">{{ $i++ }}</th>
-                                        <td>{{ $phone->phone}}</td>
-                                        <td>{{ $phone->category->name}}</td>
-                                        <td>
-                                            <a class="btn btn-danger btn-sm" href="#" data-toggle="modal" data-target="#deletePhoneModal" wire:click.prevent='getFormInside({{ $phone->id }})'><i class="fa fa-trash"></i> </a>
-                                        </td>
-                                    </tr>
-                                @empty
-                                @endforelse
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn ripple btn-secondary" data-dismiss="modal" type="button" wire:click="close()">{{ __('Close') }}</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End show Phones Model -->
-
-<!-- Create modal -->
-<div wire:ignore.self class="modal fade" id="phoneModal" >
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content modal-content-demo">
-            <div class="modal-header">
-                <h6 class="modal-title">{{ __('Add Data') }}</h6>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button" wire:click="close()"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <form id="form" >
-
-                    <div class="form-group">
-                        <label class="main-content-label h6 font-weight-bold">{{ __('Phone') }}</label>
-                        <input class="form-control" type="text" name="phone" wire:model.live='form.phone' >
-                        @error('form.phone')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
-                    </div>
-
-                    <div class="form-group">
-                        <label class="main-content-label h6 font-weight-bold">{{ __('Category') }}</label>
-  
-                        <div class="input-group" >
-                            <select class="form-control h6 font-weight-bold" wire:model.live="form.category_id" >
-                                <option class="h6 font-weight-bold" label="{{ __('Choose Category') }}" ></option>
-                                @forelse ($categoriesPhones as $value)
-                                    <option class="h6 font-weight-bold" value="{{ $value->id }}">{{ $value->name }}</option>
-                                @empty
-                                @endforelse
-
-                            </select>
-                        </div>
-                        @error('form.category_id')<span class="bg-danger tx-white d-block px-1 py-1">{{ $message }}</span>@enderror
-                    </div>
-
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn ripple btn-primary" type="button" wire:click="savePhone">{{ __('Save') }}</button>
-                <button class="btn ripple btn-secondary" data-dismiss="modal" type="button" wire:click="close()">{{ __('Close') }}</button>
-            </div>
-
-        </div>
-    </div>
-</div>
-<!-- End Create modal -->
-
-<!-- Delete Phone modal -->
-<div wire:ignore.self class="modal fade" id="deletePhoneModal" >
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content modal-content-demo">
-            <div class="modal-header">
-                <h6 class="modal-title">{{ __('Delete Data') }}</h6>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button" wire:click="close()" wire:click="$set('isModalOpen', false)"><span aria-hidden="true">&times;</span></button>
-            </div>
-            <div class="modal-body">
-                <h4 class="card-title mb-1 tx-center">{{ __('Are you sure you want to Permanently Remove this data?') }}</h4>
-                <form id="form" >
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button class="btn ripple btn-danger" type="button" wire:click="deletePhone">{{ __('Delete') }}</button>
-                <button class="btn ripple btn-secondary" data-dismiss="modal" type="button" wire:click="close()">{{ __('Close') }}</button>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Delete Phone modal -->

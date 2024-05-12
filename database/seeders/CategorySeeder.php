@@ -16,49 +16,12 @@ class CategorySeeder extends Seeder
             "Categories": {
                 "MainCategories": [
                     {
-                        "name": "Clients",
+                        "name": "السيارات",
                         "subCategories": [
-                            "Client",
-                            "Interested",
-                            "Twarea",
-                            "Issaf"
-                        ]
-                    },
-                    {
-                        "name": "Trips",
-                        "subCategories": [
-                            "Transport"
-                        ]
-                    },
-                    {
-                        "name": "Vehicles",
-                        "subCategories": [
-                            "Public"
-                        ]
-                    },
-                    {
-                        "name": "Phones",
-                        "subCategories": [
-                            "Personel"
-                        ]
-                    },
-                    {
-                        "name": "Companies",
-                        "subCategories": [
-                            "Public"
-                        ]
-                    },
-                    {
-                        "name": "Questions",
-                        "subCategories": [
-                            "Rating",
-                            "True or False"
-                        ]
-                    },
-                    {
-                        "name": "Socails",
-                        "subCategories": [
-                            "Public"
+                            "قلاب",
+                            "سطحة",
+                            "ستارة",
+                            "جوانب"
                         ]
                     }
                 ]
@@ -70,19 +33,19 @@ class CategorySeeder extends Seeder
         foreach ($data['Categories']['MainCategories'] as $mainCategory) {
             $category = \App\Models\Category::create([
                 'name' => $mainCategory['name'],
-                'description' => ' Main Category',
-                'created_id' => rand(1, 2),
-                'updated_id' => rand(1, 2),
+                'description' => NULL,
+                'created_id' => 1,
+                // 'updated_id' => rand(1, 2),
 
             ]);
 
             foreach ($mainCategory['subCategories'] as $subCat) {
                 \App\Models\Category::create([
                     'name' => $subCat,
-                    'description' => 'Sub Category',
+                    'description' => NULL,
                     'parent_id' => $category->id,
-                    'created_id' => rand(1, 2),
-                    'updated_id' => rand(1, 2),
+                    'created_id' => 1,
+                    // 'updated_id' => rand(1, 2),
 
                 ]);
             }

@@ -5,10 +5,23 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Question extends Model
+class Driver extends Model
 {
     use HasFactory;
-    protected $fillable = [ 'id', 'name','category_id','status_id','created_id', 'updated_id'];
+    protected $fillable = [ 
+        'id', 
+        'name',
+        'phone',
+        'email', 
+        'address', 
+        'car_plate', 
+        'personal_id', 
+        'notes', 
+        'created_id', 
+        'updated_id',
+        'deleted_id'
+    ];
+    
     public $timestamps = true;
 
     /**
@@ -29,27 +42,5 @@ class Question extends Model
     public function updatedBy()
     {
         return $this->belongsTo(User::class, 'updated_id');
-    }
-      
-    
-    /**
-     * Method category
-     *
-     * @return void
-     */
-    public function category()
-    {
-        return $this->belongsTo(Category::class);
-    }
-    
-    
-    /**
-     * Method status
-     *
-     * @return void
-     */
-    public function status()
-    {
-        return $this->belongsTo(Status::class);
     }
 }

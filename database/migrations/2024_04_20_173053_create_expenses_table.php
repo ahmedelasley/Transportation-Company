@@ -16,13 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->decimal('amount', 14, 4)->default(0);
             $table->text('description')->nullable();
-            
-            $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->nullOnDelete();
-
-            $table->unsignedBigInteger('status_id')->nullable();
-            $table->foreign('status_id')->references('id')->on('statuses')->onUpdate('cascade')->nullOnDelete();
-
+        
             $table->unsignedBigInteger('created_id')->nullable();
             $table->foreign('created_id')->references('id')->on('users')->onUpdate('cascade')->nullOnDelete();
 

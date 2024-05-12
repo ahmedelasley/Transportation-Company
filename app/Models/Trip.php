@@ -11,21 +11,19 @@ class Trip extends Model
     protected $fillable = [ 
         'id', 
         'code',
-        'service_cost',
-        'wait_cost', 
-        'paid', 
-        'desrved_date',
-        'direction',
         'from_area',
-        'to_area',
-        'client_id',
-        'company_id',
-        'vehicle_id',
-        'reason_cancel',
+        'to_area', 
+        'client_id', 
+        'driver_id',
+        'driver_fee',
+        'client_price',
+        'loan',
+        'discount',
+        'carrier_name',
+        'status',
         'category_id',
-        'notes', 
-        'date',
-        'status_id', 
+        'notes',
+        'date', 
         'created_id', 
         'updated_id',
         'deleted_id',
@@ -80,9 +78,9 @@ class Trip extends Model
      *
      * @return void
      */
-    public function company()
+    public function driver()
     {
-        return $this->belongsTo(Company::class);
+        return $this->belongsTo(Driver::class);
     }
     
     /**
@@ -106,16 +104,6 @@ class Trip extends Model
     }
 
     /**
-     * Method vehicle
-     *
-     * @return void
-     */
-    public function vehicle()
-    {
-        return $this->belongsTo(Vehicle::class);
-    }
-
-    /**
      * Method category
      *
      * @return void
@@ -126,15 +114,4 @@ class Trip extends Model
     }
     
     
-    /**
-     * Method status
-     *
-     * @return void
-     */
-    public function status()
-    {
-        return $this->belongsTo(Status::class);
-    }
-
-
 }

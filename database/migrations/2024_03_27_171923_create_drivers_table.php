@@ -11,21 +11,29 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('phones', function (Blueprint $table) {
+        Schema::create('drivers', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('client_id')->nullable();
-            $table->foreign('client_id')->references('id')->on('clients')->onUpdate('cascade')->nullOnDelete();
+
+            $table->string('name');
             $table->string('phone')->unique();
-            $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->nullOnDelete();
-            
+            $table->string('email')->unique();
+            $table->string('address');
+            $table->string('car_plate');
+            $table->string('personal_id')->unique();
+
+            $table->string('notes');
+
             $table->unsignedBigInteger('created_id')->nullable();
             $table->foreign('created_id')->references('id')->on('users')->onUpdate('cascade')->nullOnDelete();
 
             $table->unsignedBigInteger('updated_id')->nullable();
             $table->foreign('updated_id')->references('id')->on('users')->onUpdate('cascade')->nullOnDelete();
 
+            $table->unsignedBigInteger('deleted_id')->nullable();
+            $table->foreign('deleted_id')->references('id')->on('users')->onUpdate('cascade')->nullOnDelete();
+
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
@@ -34,6 +42,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('phones');
+        Schema::dropIfExists('drivers');
     }
 };

@@ -15,22 +15,11 @@ return new class extends Migration
             $table->id();
 
             $table->string('name');
-            $table->string('phone_number')->unique();
+            $table->string('phone')->unique();
             $table->string('email')->unique();
             $table->string('address');
-            $table->unsignedBigInteger('area_id')->nullable();
-            $table->foreign('area_id')->references('id')->on('areas')->onUpdate('cascade')->nullOnDelete();
-            $table->unsignedBigInteger('social_id')->nullable();
-            $table->foreign('social_id')->references('id')->on('socials')->onUpdate('cascade')->nullOnDelete();
-
-            $table->unsignedBigInteger('category_id')->nullable();
-            $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->nullOnDelete();
 
             $table->string('notes');
-            $table->timestamp('date')->nullable();
-
-            $table->unsignedBigInteger('status_id')->nullable();
-            $table->foreign('status_id')->references('id')->on('statuses')->onUpdate('cascade')->nullOnDelete();
 
             $table->unsignedBigInteger('created_id')->nullable();
             $table->foreign('created_id')->references('id')->on('users')->onUpdate('cascade')->nullOnDelete();

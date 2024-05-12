@@ -2,18 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Status;
-use App\Http\Requests\StoreStatusRequest;
-use App\Http\Requests\UpdateStatusRequest;
+use App\Models\Driver;
+use App\Http\Requests\StoreDriverRequest;
+use App\Http\Requests\UpdateDriverRequest;
 
-class StatusController extends Controller
+class DriverController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        return view('dashboard.statuses.index');
+        return view('dashboard.drivers.index');
     }
 
     /**
@@ -27,7 +27,7 @@ class StatusController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreStatusRequest $request)
+    public function store(StoreDriverRequest $request)
     {
         //
     }
@@ -35,7 +35,7 @@ class StatusController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Status $status)
+    public function show(Driver $driver)
     {
         //
     }
@@ -43,7 +43,7 @@ class StatusController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Status $status)
+    public function edit(Driver $driver)
     {
         //
     }
@@ -51,7 +51,7 @@ class StatusController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateStatusRequest $request, Status $status)
+    public function update(UpdateDriverRequest $request, Driver $driver)
     {
         //
     }
@@ -59,7 +59,7 @@ class StatusController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Status $status)
+    public function destroy(Driver $driver)
     {
         //
     }

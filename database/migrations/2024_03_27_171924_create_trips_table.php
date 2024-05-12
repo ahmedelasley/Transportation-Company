@@ -14,14 +14,6 @@ return new class extends Migration
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
             $table->string('code')->unique();
-            $table->decimal('service_cost', 14, 4)->default(0);
-            $table->decimal('wait_cost', 14, 4)->default(0);
-            $table->decimal('paid', 14, 4)->default(0);
-
-            $table->timestamp('desrved_date')->nullable();
-
-            // $table->string('direction')->nullable();
-            $table->enum('direction', ['One Way', 'Round Trip', 'Wait']);
 
             $table->unsignedBigInteger('from_area')->nullable();
             $table->foreign('from_area')->references('id')->on('areas')->onUpdate('cascade')->nullOnDelete();
@@ -33,22 +25,25 @@ return new class extends Migration
             $table->unsignedBigInteger('client_id')->nullable();
             $table->foreign('client_id')->references('id')->on('clients')->onUpdate('cascade')->nullOnDelete();
 
-            $table->unsignedBigInteger('company_id')->nullable();
-            $table->foreign('company_id')->references('id')->on('companies')->onUpdate('cascade')->nullOnDelete();
+            $table->unsignedBigInteger('driver_id')->nullable();
+            $table->foreign('driver_id')->references('id')->on('drivers')->onUpdate('cascade')->nullOnDelete();
 
-            $table->unsignedBigInteger('vehicle_id')->nullable();
-            $table->foreign('vehicle_id')->references('id')->on('vehicles')->onUpdate('cascade')->nullOnDelete();
+            $table->decimal('driver_fee', 14, 4)->default(0);
+            $table->decimal('client_price', 14, 4)->default(0);
+
+            $table->decimal('loan', 14, 4)->default(0);
+            $table->decimal('discount', 14, 4)->default(0);
+
+            $table->string('carrier_name')->nullable();
+
+            // $table->string('direction')->nullable();
+            $table->enum('status', ['Open', 'Close']);
 
             $table->unsignedBigInteger('category_id')->nullable();
             $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade')->nullOnDelete();
 
-            $table->string('reason_cancel')->nullable();
-
             $table->string('notes')->nullable();
             $table->timestamp('date')->nullable();
-
-            $table->unsignedBigInteger('status_id')->nullable();
-            $table->foreign('status_id')->references('id')->on('statuses')->onUpdate('cascade')->nullOnDelete();
 
             $table->unsignedBigInteger('created_id')->nullable();
             $table->foreign('created_id')->references('id')->on('users')->onUpdate('cascade')->nullOnDelete();

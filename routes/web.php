@@ -7,6 +7,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\TripController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ClientController;
+use App\Http\Controllers\DriverController;
 use App\Http\Controllers\SocialController;
 use App\Http\Controllers\StatusController;
 use App\Http\Controllers\CompanyController;
@@ -75,18 +76,14 @@ Route::group(['middleware' => ['auth', 'verified']], function () {
 
 
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
-    Route::get('/statuses', [StatusController::class, 'index'])->name('statuses');
     Route::get('/areas', [AreaController::class, 'index'])->name('areas');
-    Route::get('/questions', [QuestionController::class, 'index'])->name('questions');
-    Route::get('/vehicles', [VehicleController::class, 'index'])->name('vehicles');
-    Route::get('/socials', [SocialController::class, 'index'])->name('socials');
     
     Route::get('/expenses', [ExpensesController::class, 'index'])->name('expenses');
     Route::get('/revenues', [RevenuesController::class, 'index'])->name('revenues');
 
+    Route::get('/drivers', [DriverController::class, 'index'])->name('drivers');
     Route::get('/clients', [ClientController::class, 'index'])->name('clients');
     Route::get('/trips', [TripController::class, 'index'])->name('trips');
-    Route::get('/companies', [CompanyController::class, 'index'])->name('companies');
 
     // Route::get('/categories', ShowCategories::class)->name('categories');
 });
